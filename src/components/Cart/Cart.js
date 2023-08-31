@@ -11,9 +11,11 @@ const Cart = (props) => {
         <Card className={classes.cart}>
             <h2>Your Shopping Cart</h2>
             <ul>
-                {cartItems.map(p => (
-                    <CartItem product={p} />
-                ))}
+                {cartItems.length > 0 ? cartItems.map(p => (
+                    <CartItem key={p.title} product={p} />
+                )) : (
+                    <p>Your cart is empty. That means shopping time, yaay!</p>
+                )}
             </ul>
         </Card>
     );

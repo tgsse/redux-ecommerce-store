@@ -1,12 +1,8 @@
 import {createSlice} from "@reduxjs/toolkit";
-import ProductItem from "../../components/Shop/ProductItem";
-import ProductInCart from "../../models/ProductInCart";
 
 const initialState = {
     isVisible: false,
-    items: [
-        new ProductInCart("product name", 2, 16, 8)
-    ],
+    items: [],
 }
 
 export const cartSlice = createSlice({
@@ -17,17 +13,45 @@ export const cartSlice = createSlice({
             state.isVisible = !state.isVisible
         },
         addToCart(state, action) {
-            state.items.push(action.payload)
+            const item = action.payload
+            const existingItem = state.items.findIndex(order => order.title === item.title)
+            if (existingItem >= 0) {
+                incrementQuantity(state.items[existingItem])
+            } else {
+                state.items.push({
+                    title: item.title,
+                    quantity: 1,
+                    priceTotal: item.pricePerItem,
+                    pricePerItem: item.pricePerItem,
+                })
+            }
         },
-        incrementItem(state, action) {
-            const toBeChanged = state.items.find(item => item.id === action.payload.id)
-            toBeChanged.amount++
-        },
-        decrementItem(state, action) {
-            const toBeChanged = state.items.find(item => item.id === action.payload.id)
-            toBeChanged.amount++
+        removeFromCart(state, action) {
+            const toBeRemoved = state.items.findIndex(item => item.title === action.payload.title)
+            if (toBeRemoved >= 0) {
+                const item = state.items[toBeRemoved]
+                if (item.quantity > 1) {
+                    decrementQuantity(item)
+                } else {
+                    state.items.splice(toBeRemoved, 1)
+                }
+            }
         },
     },
 })
+
+function incrementQuantity(item) {
+    item.quantity++
+    updatePriceTotal(item)
+}
+
+function decrementQuantity(item) {
+    item.quantity--
+    updatePriceTotal(item)
+}
+
+function updatePriceTotal(item) {
+    item.priceTotal = item.quantity * item.pricePerItem
+}
 
 export const cartActions = cartSlice.actions

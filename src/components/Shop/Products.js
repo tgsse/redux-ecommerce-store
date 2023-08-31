@@ -12,6 +12,7 @@ const Products = (props) => {
             <ul>
                 {products.map(p => (
                     <ProductItem
+                        key={p.title}
                         product={p}
                     />
                 ))}

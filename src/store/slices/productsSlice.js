@@ -1,9 +1,9 @@
 import {createSlice} from "@reduxjs/toolkit";
-import Product from "../../models/Product";
 
 const initialState = {
     items: [
-        new Product("product name", 8, "the best product ever")
+        {title: "product name", pricePerItem: 8, description: "the best product ever"},
+        {title: "product name 2", pricePerItem: 3, description: "the second best product ever"},
     ],
 }
 
