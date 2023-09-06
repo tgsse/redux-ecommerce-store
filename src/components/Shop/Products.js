@@ -1,16 +1,12 @@
 import ProductItem from './ProductItem';
 import classes from './Products.module.css';
-import {useSelector} from "react-redux";
 
 const Products = (props) => {
-
-    const products = useSelector(state => state.products.items)
-
     return (
         <section className={classes.products}>
-            <h2>Buy your favorite products</h2>
+            <h2>Best Sellers</h2>
             <ul>
-                {products.map(p => (
+                {props.products.map(p => (
                     <ProductItem
                         key={p.title}
                         product={p}

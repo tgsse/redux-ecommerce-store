@@ -1,4 +1,4 @@
-import Card from '../UI/Card';
+import Card from '../UI/Card/Card';
 import classes from './Cart.module.css';
 import CartItem from './CartItem';
 import {useSelector} from "react-redux";
@@ -12,7 +12,7 @@ const Cart = (props) => {
             <h2>Your Shopping Cart</h2>
             <ul>
                 {cartItems.length > 0 ? cartItems.map(p => (
-                    <CartItem key={p.title} product={p} />
+                    <CartItem key={p.title} product={p}/>
                 )) : (
                     <p>Your cart is empty. That means shopping time, yaay!</p>
                 )}
