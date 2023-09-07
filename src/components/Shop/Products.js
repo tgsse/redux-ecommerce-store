@@ -1,7 +1,13 @@
-import ProductItem from './ProductItem';
-import classes from './Products.module.css';
+import React from 'react'
+import ProductItem from './ProductItem'
+import classes from './Products.module.css'
+import propTypes from '../../util/propTypes'
 
-const Products = (props) => {
+Products.propTypes = {
+    products: [propTypes.product]
+}
+
+function Products(props) {
     return (
         <section className={classes.products}>
             <h2>Best Sellers</h2>
@@ -15,7 +21,7 @@ const Products = (props) => {
 
             </ul>
         </section>
-    );
-};
+    )
+}
 
-export default Products;
+export default Products

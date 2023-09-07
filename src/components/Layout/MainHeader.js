@@ -1,7 +1,8 @@
-import CartButton from '../Cart/CartButton';
-import classes from './MainHeader.module.css';
+import React from 'react'
+import CartButton from '../Cart/CartButton'
+import classes from './MainHeader.module.css'
 
-const MainHeader = () => {
+function MainHeader() {
     return (
         <header className={classes.header}>
             <h1>Ecommerce Store</h1>
@@ -13,7 +14,7 @@ const MainHeader = () => {
                 </ul>
             </nav>
         </header>
-    );
-};
+    )
+}
 
-export default MainHeader;
+export default MainHeader

@@ -1,12 +1,23 @@
-import classes from './CartItem.module.css';
-import {priceFormatter} from "../../util/util";
-import {useDispatch} from "react-redux";
-import {cartActions} from "../../store/slices/cartSlice";
+import React from 'react'
+import classes from './CartItem.module.css'
+import {priceFormatter} from '../../util/util'
+import {useDispatch} from 'react-redux'
+import {cartActions} from '../../store/slices/cartSlice'
+import {string, number} from 'prop-types'
 
-const CartItem = (props) => {
+CartItem.propTypes = {
+    product: {
+        title: string,
+        quantity: number,
+        priceTotal: number,
+        pricePerItem: number,
+    }
+}
+
+function CartItem(props) {
     const dispatch = useDispatch()
 
-    const {title, quantity, priceTotal, pricePerItem} = props.product;
+    const {title, quantity, priceTotal, pricePerItem} = props.product
 
     const onAddProduct = () => {
         dispatch(cartActions.addToCart(props.product))
@@ -34,7 +45,7 @@ const CartItem = (props) => {
                 </div>
             </div>
         </li>
-    );
-};
+    )
+}
 
-export default CartItem;
+export default CartItem

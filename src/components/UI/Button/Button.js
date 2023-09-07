@@ -1,8 +1,9 @@
-import React from 'react';
+import React from 'react'
+import classes from './Button.module.css'
 
-import classes from './Button.module.css';
+Button.propTypes = HTMLButtonElement.propTypes
 
-const Button = (props) => {
+function Button(props) {
     return (
         <button
             type={props.type || 'button'}
@@ -12,7 +13,7 @@ const Button = (props) => {
         >
             {props.children}
         </button>
-    );
-};
+    )
+}
 
-export default Button;
+export default Button

@@ -1,6 +1,7 @@
-import Cart from "../../components/Cart/Cart";
-import {useSelector} from "react-redux";
-import Products from "../../components/Shop/Products";
+import React from 'react'
+import Cart from '../../components/Cart/Cart'
+import {useSelector} from 'react-redux'
+import Products from '../../components/Shop/Products'
 
 export default function ProductsScreen() {
 

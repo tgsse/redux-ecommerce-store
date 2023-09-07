@@ -1,7 +1,8 @@
-import Layout from './components/Layout/Layout';
-import LoginScreen from "./screens/LoginScreen";
-import {useEffect, useState} from "react";
-import ProductsScreen from "./screens/ProductsScreen";
+import React from 'react'
+import Layout from './components/Layout/Layout'
+import LoginScreen from './screens/LoginScreen'
+import {useEffect, useState} from 'react'
+import ProductsScreen from './screens/ProductsScreen'
 
 function App() {
 
@@ -35,7 +36,7 @@ function App() {
                 />
             )}
         </Layout>
-    );
+    )
 }
 
-export default App;
+export default App

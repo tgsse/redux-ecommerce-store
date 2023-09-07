@@ -1,13 +1,16 @@
-import classes from './Card.module.css';
+import React from 'react'
+import classes from './Card.module.css'
 
-const Card = (props) => {
+Card.propTypes = HTMLElement.prototype
+
+function Card(props) {
     return (
         <section
             className={`${classes.card} ${props.className ? props.className : ''}`}
         >
             {props.children}
         </section>
-    );
-};
+    )
+}
 
-export default Card;
+export default Card
