@@ -1,12 +1,12 @@
-import {number, string} from 'prop-types'
+import {number, shape, string} from 'prop-types'
 
-const product = {
+const product = shape({
     title: string,
     description: string,
     quantity: number,
     priceTotal: number,
-    pricePerItem: number,
-}
+    price: number,
+})
 
 export default {
     product,

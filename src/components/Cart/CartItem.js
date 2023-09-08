@@ -3,21 +3,16 @@ import classes from './CartItem.module.css'
 import {priceFormatter} from '../../util/util'
 import {useDispatch} from 'react-redux'
 import {cartActions} from '../../store/slices/cartSlice'
-import {string, number} from 'prop-types'
+import propTypes from '../../util/propTypes'
 
 CartItem.propTypes = {
-    product: {
-        title: string,
-        quantity: number,
-        priceTotal: number,
-        pricePerItem: number,
-    }
+    product: propTypes.product,
 }
 
 function CartItem(props) {
     const dispatch = useDispatch()
 
-    const {title, quantity, priceTotal, pricePerItem} = props.product
+    const {title, quantity, priceTotal, price} = props.product
 
     const onAddProduct = () => {
         dispatch(cartActions.addToCart(props.product))
@@ -32,7 +27,7 @@ function CartItem(props) {
                 <h3>{title}</h3>
                 <div className={classes.price}>
                     ${priceFormatter.format(priceTotal)}{' '}
-                    <span className={classes.itemprice}>(${priceFormatter.format(pricePerItem)}/item)</span>
+                    <span className={classes.itemprice}>(${priceFormatter.format(price)}/item)</span>
                 </div>
             </header>
             <div className={classes.details}>

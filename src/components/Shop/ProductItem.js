@@ -12,7 +12,7 @@ ProductItem.propTypes = {
 
 function ProductItem(props) {
     const dispatch = useDispatch()
-    const {title, pricePerItem, description} = props.product
+    const {title, price, description} = props.product
 
     const onAddToCart = () => {
         dispatch(cartActions.addToCart(props.product))
@@ -23,7 +23,7 @@ function ProductItem(props) {
             <Card>
                 <header>
                     <h3>{title}</h3>
-                    <div className={classes.price}>${priceFormatter.format(pricePerItem)}</div>
+                    <div className={classes.price}>${priceFormatter.format(price)}</div>
                 </header>
                 <p>{description}</p>
                 <div className={classes.actions}>

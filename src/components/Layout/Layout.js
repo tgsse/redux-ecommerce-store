@@ -1,7 +1,10 @@
 import React, {Fragment} from 'react'
 import MainHeader from './MainHeader'
+import {node} from 'prop-types'
 
-Layout.propTypes = HTMLElement.prototype
+Layout.propTypes = {
+    children: node
+}
 
 function Layout(props) {
     return (

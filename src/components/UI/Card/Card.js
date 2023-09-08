@@ -1,7 +1,11 @@
 import React from 'react'
 import classes from './Card.module.css'
+import {node, string} from 'prop-types'
 
-Card.propTypes = HTMLElement.prototype
+Card.propTypes = {
+    children: node,
+    className: string,
+}
 
 function Card(props) {
     return (

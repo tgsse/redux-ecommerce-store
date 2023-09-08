@@ -21,8 +21,8 @@ export const cartSlice = createSlice({
                 state.items.push({
                     title: item.title,
                     quantity: 1,
-                    priceTotal: item.pricePerItem,
-                    pricePerItem: item.pricePerItem,
+                    priceTotal: item.price,
+                    price: item.price,
                 })
             }
         },
@@ -51,7 +51,7 @@ function decrementQuantity(item) {
 }
 
 function updatePriceTotal(item) {
-    item.priceTotal = item.quantity * item.pricePerItem
+    item.priceTotal = item.quantity * item.price
 }
 
 export const cartActions = cartSlice.actions

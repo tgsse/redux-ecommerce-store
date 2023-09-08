@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import Layout from './components/Layout/Layout'
-import LoginScreen from './screens/LoginScreen'
-import {useEffect, useState} from 'react'
-import ProductsScreen from './screens/ProductsScreen'
+import LoginScreen from './pages/Login'
+// import CreateProductPage from './pages/CreateProduct'
+import ProductsScreen from './pages/Products'
 
 function App() {
 
@@ -27,6 +27,7 @@ function App() {
     return (
         <Layout>
             {isLoggedIn ? (
+                // <CreateProductPage/>
                 <ProductsScreen/>
             ) : (
                 <LoginScreen
