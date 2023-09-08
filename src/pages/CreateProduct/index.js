@@ -6,7 +6,7 @@ export default function CreateProductPage() {
     function onCreateProduct(productData) {
         console.log({productData})
         const myHeaders = new Headers()
-        myHeaders.append('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGY3MDBiOWJjNzFmMmUyYjQxZWQzNDAiLCJlbWFpbCI6InRhbWFzLmd1cmEuc3NlQGdtYWlsLmNvbSIsImlhdCI6MTY5NDIwMTMwNCwiZXhwIjoxNjk0MjA4NTA0fQ.LUiuYz14jl9dJHGs8hHzzBPIFsY1cO8t4gan6meQeTk')
+        myHeaders.append('Authorization', 'Bearer ')
 
         const formData = new FormData()
         formData.append('title', productData.title)
