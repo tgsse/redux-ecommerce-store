@@ -15,7 +15,7 @@ function Products(props) {
             <ul>
                 {props.products.map(p => (
                     <ProductItem
-                        key={p.title}
+                        key={p._id}
                         product={p}
                     />
                 ))}

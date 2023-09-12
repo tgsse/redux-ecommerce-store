@@ -1,21 +1,38 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import Login from '../../components/Login/Login'
-import { bool, func } from 'prop-types'
+import { useNavigate } from 'react-router-dom'
 
-LoginPage.propTypes = {
-    isLoggedIn: bool,
-    onLogin: func,
-    onLogout: func,
-}
+function LoginPage() {
 
-function LoginPage(props) {
+    useEffect(() => {
+        const alreadyLoggedIn = localStorage.getItem('isLoggedIn') === '1'
+        if (alreadyLoggedIn) {
+            navigate('/products')
+        }
+    }, [])
 
+    const onLogin = (email, password) => {
+        console.log({ email, password })
+        localStorage.setItem('isLoggedIn', '1')
+        navigate('/products')
+    }
+    const onLogout = () => {
+        localStorage.setItem('isLoggedIn', '0')
+    }
+
+    const navigate = useNavigate()
+    const navigateProgrammatically = () => {
+        setTimeout(() => {
+            navigate('/')
+        }, 2000)
+    }
+
+    navigateProgrammatically()
     return (
         <Login
-            isLoggedIn={props.isLoggedIn}
-            onLogin={props.onLogin}
-            onLogout={props.onLogout}
+            onLogin={onLogin}
+            onLogout={onLogout}
         />
     )
 }

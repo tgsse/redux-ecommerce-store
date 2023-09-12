@@ -1,17 +1,21 @@
+import ProductItem from '../../components/Shop/ProductItem'
+import { useParams } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
-import Products from '../../components/Shop/Products'
 
-export default function ProductsPage() {
-    // const products = useSelector(state => state.products.items)
+export default function ProductDetailsPage() {
+    const params = useParams()
 
-    const [products, setProducts] = useState([])
+
+    const [product, setProduct] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState(null)
 
-    useEffect(fetchProducts, [])
+    useEffect(fetchProduct, [])
 
-    function fetchProducts() {
-        fetch('http://localhost:3001/api/products')
+    // TODO: implement custom http handling to avoid duplication
+
+    function fetchProduct() {
+        fetch(`http://localhost:3001/api/products/${params.id}`)
             .then(response => {
                 if (!response.ok) {
                     console.log(response)
@@ -21,12 +25,11 @@ export default function ProductsPage() {
             })
             .then(result => {
                 console.log('result', result)
-                setProducts(result.products)
+                setProduct(result.product)
             })
             .catch(e => {
                 console.log(e)
                 setError(e.message)
-                // TODO: failed to fetch (eg. no backend) causes the component to call fetchProducts again and again
             })
             .finally(() => {
                 setIsLoading(false)
@@ -35,19 +38,20 @@ export default function ProductsPage() {
 
     let Content = () => {
         if (isLoading) {
-            return <p>Fetching products...</p>
+            return <p>Fetching product details...</p>
         } else if (error) {
             return <p>{error}</p>
-        } else if (!products.length) {
-            return <p>There are no products at the moment. <a href="#">Create one now ↗</a></p>
+        } else if (product === null) {
+            return <p>No such product. <a href="#">Create one now ↗</a></p>
         } else {
-            return <Products products={products} />
+            return <ProductItem product={product} />
         }
     }
 
 
     return (
         <>
+            <h1>Product Details Page</h1>
             <Content />
         </>
     )

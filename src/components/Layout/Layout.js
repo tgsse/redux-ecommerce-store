@@ -1,16 +1,14 @@
 import React, { Fragment } from 'react'
-import MainHeader from './MainHeader'
-import { node } from 'prop-types'
+import Header from './Header'
+import { Outlet } from 'react-router-dom'
 
-Layout.propTypes = {
-    children: node
-}
-
-function Layout(props) {
+function Layout() {
     return (
         <Fragment>
-            <MainHeader />
-            <main>{props.children}</main>
+            <Header />
+            <main>
+                <Outlet />
+            </main>
         </Fragment>
     )
 }

@@ -5,6 +5,7 @@ import { priceFormatter } from '../../util/util'
 import { useDispatch } from 'react-redux'
 import { cartActions } from '../../store/slices/cartSlice'
 import propTypes from '../../util/propTypes'
+import { Link } from 'react-router-dom'
 
 ProductItem.propTypes = {
     product: propTypes.product,
@@ -12,7 +13,7 @@ ProductItem.propTypes = {
 
 function ProductItem(props) {
     const dispatch = useDispatch()
-    const { title, price, description } = props.product
+    const { title, price, description, _id: id } = props.product
 
     const onAddToCart = () => {
         dispatch(cartActions.addToCart(props.product))
@@ -27,6 +28,7 @@ function ProductItem(props) {
                 </header>
                 <p>{description}</p>
                 <div className={classes.actions}>
+                    <Link to={`/products/${id}`}>View</Link>
                     <button onClick={onAddToCart}>Add to Cart</button>
                 </div>
             </Card>

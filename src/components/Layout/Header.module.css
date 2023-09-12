@@ -17,3 +17,21 @@
   margin: 0;
   padding: 0;
 }
+
+.header li {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+.header li a {
+  text-decoration: none;
+  color: cadetblue;
+}
+
+.header a:hover,
+.header a:active,
+.header a.active {
+  cursor: pointer;
+  color: var(--blue);
+  text-decoration: underline;
+}
