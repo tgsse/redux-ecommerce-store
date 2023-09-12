@@ -9,7 +9,7 @@ Layout.propTypes = {
 function Layout(props) {
     return (
         <Fragment>
-            <MainHeader/>
+            <MainHeader />
             <main>{props.children}</main>
         </Fragment>
     )

@@ -38,15 +38,15 @@ function CreateProductForm(props) {
             <form className={classes.form} onSubmit={submitHandler}>
                 <div className={classes.control}>
                     <label htmlFor="title">Product Title</label>
-                    <input type="text" required id="title" ref={titleInputRef}/>
+                    <input type="text" required id="title" ref={titleInputRef} />
                 </div>
                 <div className={classes.control}>
                     <label htmlFor="image">Product Image</label>
-                    <input type="file" required id="image" ref={imageInputRef}/>
+                    <input type="file" required id="image" ref={imageInputRef} />
                 </div>
                 <div className={classes.control}>
                     <label htmlFor="price">Price</label>
-                    <input type="number" step={'0.01'} min={0} required id="price" ref={priceInputRef}/>
+                    <input type="number" step={'0.01'} min={0} required id="price" ref={priceInputRef} />
                 </div>
                 <div className={classes.control}>
                     <label htmlFor="description">Description</label>

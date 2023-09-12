@@ -28,6 +28,6 @@ export default function CreateProductPage() {
     }
 
     return (
-        <CreateProductForm onCreateProduct={onCreateProduct}/>
+        <CreateProductForm onCreateProduct={onCreateProduct} />
     )
 }

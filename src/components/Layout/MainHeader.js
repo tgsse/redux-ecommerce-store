@@ -9,7 +9,7 @@ function MainHeader() {
             <nav>
                 <ul>
                     <li>
-                        <CartButton/>
+                        <CartButton />
                     </li>
                 </ul>
             </nav>

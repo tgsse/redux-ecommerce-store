@@ -3,12 +3,11 @@ import Layout from './components/Layout/Layout'
 import LoginPage from './pages/LoginPage'
 // import CreateProductPage from './pages/CreateProduct'
 import ProductsPage from './pages/ProductsPage'
-import { createBrowserRouter } from 'react-router-dom'
-
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 
 const router = createBrowserRouter([
-    { path: '' }
+    { path: '/', element: <ProductsPage /> },
 ])
 
 function App() {
@@ -32,18 +31,20 @@ function App() {
         setIsLoggedIn(false)
     }
     return (
-        <Layout>
-            {isLoggedIn ? (
-                // <CreateProductPage/>
-                <ProductsPage/>
-            ) : (
-                <LoginPage
-                    isLoggedIn={isLoggedIn}
-                    onLogin={onLogin}
-                    onLogout={onLogout}
-                />
-            )}
-        </Layout>
+        // <Layout>
+        //     {isLoggedIn ? (
+        //         // <CreateProductPage/>
+        //         <ProductsPage/>
+        //     ) : (
+        //         <LoginPage
+        //             isLoggedIn={isLoggedIn}
+        //             onLogin={onLogin}
+        //             onLogout={onLogout}
+        //         />
+        //     )}
+        // </Layout>
+        <RouterProvider
+            router={router} />
     )
 }
 

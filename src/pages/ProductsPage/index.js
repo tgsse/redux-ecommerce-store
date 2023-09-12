@@ -40,7 +40,7 @@ export default function ProductsPage() {
         } else if (!products.length) {
             return <p>There are no products at the moment. <a href="#">Create one now ↗</a></p>
         } else {
-            return <Products products={products}/>
+            return <Products products={products} />
         }
     }
 
@@ -48,7 +48,7 @@ export default function ProductsPage() {
     return (
         <>
 
-            <Content/>
+            <Content />
 
             {/*{isLoading && <p>Fetching products...</p>}*/}
             {/*{!isLoading && products.length === 0 && !error && (*/}

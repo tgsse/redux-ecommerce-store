@@ -13,7 +13,7 @@ function Cart() {
             <h2>Your Shopping Cart</h2>
             <ul>
                 {cartItems.length > 0 ? cartItems.map(p => (
-                    <CartItem key={p.title} product={p}/>
+                    <CartItem key={p.title} product={p} />
                 )) : (
                     <p>Your cart is empty. That means shopping time, yaay!</p>
                 )}
