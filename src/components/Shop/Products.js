@@ -2,7 +2,7 @@ import React from 'react'
 import ProductItem from './ProductItem'
 import classes from './Products.module.css'
 import propTypes from '../../util/propTypes'
-import {arrayOf} from 'prop-types'
+import { arrayOf } from 'prop-types'
 
 Products.propTypes = {
     products: arrayOf(propTypes.product)

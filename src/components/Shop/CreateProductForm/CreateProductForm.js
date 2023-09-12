@@ -1,8 +1,8 @@
-import React, {useRef} from 'react'
+import React, { useRef } from 'react'
 
 import classes from './CreateProductForm.module.css'
 import Card from '../../UI/Card/Card'
-import {func} from 'prop-types'
+import { func } from 'prop-types'
 
 CreateProductForm.propTypes = {
     onCreateProduct: func
@@ -22,7 +22,7 @@ function CreateProductForm(props) {
         const enteredPrice = priceInputRef.current.value
         const enteredDescription = descriptionInputRef.current.value
 
-        console.log('img', {imageInputRef})
+        console.log('img', { imageInputRef })
         const productData = {
             title: enteredTitle,
             image: enteredImage,

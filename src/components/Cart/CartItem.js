@@ -1,8 +1,8 @@
 import React from 'react'
 import classes from './CartItem.module.css'
-import {priceFormatter} from '../../util/util'
-import {useDispatch} from 'react-redux'
-import {cartActions} from '../../store/slices/cartSlice'
+import { priceFormatter } from '../../util/util'
+import { useDispatch } from 'react-redux'
+import { cartActions } from '../../store/slices/cartSlice'
 import propTypes from '../../util/propTypes'
 
 CartItem.propTypes = {
@@ -12,7 +12,7 @@ CartItem.propTypes = {
 function CartItem(props) {
     const dispatch = useDispatch()
 
-    const {title, quantity, priceTotal, price} = props.product
+    const { title, quantity, priceTotal, price } = props.product
 
     const onAddProduct = () => {
         dispatch(cartActions.addToCart(props.product))

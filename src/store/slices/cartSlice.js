@@ -1,7 +1,6 @@
-import {createSlice} from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    isVisible: false,
     items: [],
 }
 
@@ -9,9 +8,6 @@ export const cartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
-        toggle(state) {
-            state.isVisible = !state.isVisible
-        },
         addToCart(state, action) {
             const item = action.payload
             const existingItem = state.items.findIndex(order => order.title === item.title)

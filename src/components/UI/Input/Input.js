@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from './Input.module.css'
-import {bool, func, string} from 'prop-types'
+import { bool, func, string } from 'prop-types'
 
 Input.propTypes = {
     isValid: bool,

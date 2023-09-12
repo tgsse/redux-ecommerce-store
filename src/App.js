@@ -1,8 +1,15 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import Layout from './components/Layout/Layout'
-import LoginScreen from './pages/Login'
+import LoginPage from './pages/LoginPage'
 // import CreateProductPage from './pages/CreateProduct'
-import ProductsScreen from './pages/Products'
+import ProductsPage from './pages/ProductsPage'
+import { createBrowserRouter } from 'react-router-dom'
+
+
+
+const router = createBrowserRouter([
+    { path: '' }
+])
 
 function App() {
 
@@ -16,7 +23,7 @@ function App() {
     }, [])
 
     const onLogin = (email, password) => {
-        console.log({email, password})
+        console.log({ email, password })
         localStorage.setItem('isLoggedIn', '1')
         setIsLoggedIn(true)
     }
@@ -28,9 +35,9 @@ function App() {
         <Layout>
             {isLoggedIn ? (
                 // <CreateProductPage/>
-                <ProductsScreen/>
+                <ProductsPage/>
             ) : (
-                <LoginScreen
+                <LoginPage
                     isLoggedIn={isLoggedIn}
                     onLogin={onLogin}
                     onLogout={onLogout}

@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from './Card.module.css'
-import {node, string} from 'prop-types'
+import { node, string } from 'prop-types'
 
 Card.propTypes = {
     children: node,

@@ -2,7 +2,7 @@ import React from 'react'
 import Card from '../UI/Card/Card'
 import classes from './Cart.module.css'
 import CartItem from './CartItem'
-import {useSelector} from 'react-redux'
+import { useSelector } from 'react-redux'
 
 function Cart() {
 

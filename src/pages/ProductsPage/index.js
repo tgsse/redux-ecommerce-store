@@ -1,11 +1,7 @@
-import React, {useEffect, useState} from 'react'
-import Cart from '../../components/Cart/Cart'
-import {useSelector} from 'react-redux'
+import React, { useEffect, useState } from 'react'
 import Products from '../../components/Shop/Products'
 
-export default function ProductsScreen() {
-
-    const isCartVisible = useSelector(state => state.cart.isVisible)
+export default function ProductsPage() {
     // const products = useSelector(state => state.products.items)
 
     const [products, setProducts] = useState([])
@@ -41,7 +37,7 @@ export default function ProductsScreen() {
             return <p>Fetching products...</p>
         } else if (error) {
             return <p>{error}</p>
-        } else  if (!products.length) {
+        } else if (!products.length) {
             return <p>There are no products at the moment. <a href="#">Create one now ↗</a></p>
         } else {
             return <Products products={products}/>
@@ -51,11 +47,8 @@ export default function ProductsScreen() {
 
     return (
         <>
-            {isCartVisible && (
-                <Cart/>
-            )}
 
-            <Content />
+            <Content/>
 
             {/*{isLoading && <p>Fetching products...</p>}*/}
             {/*{!isLoading && products.length === 0 && !error && (*/}

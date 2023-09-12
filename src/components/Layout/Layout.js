@@ -1,6 +1,6 @@
-import React, {Fragment} from 'react'
+import React, { Fragment } from 'react'
 import MainHeader from './MainHeader'
-import {node} from 'prop-types'
+import { node } from 'prop-types'
 
 Layout.propTypes = {
     children: node

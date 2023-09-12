@@ -1,15 +1,15 @@
 import React from 'react'
 
 import Login from '../../components/Login/Login'
-import {bool, func} from 'prop-types'
+import { bool, func } from 'prop-types'
 
-LoginScreen.propTypes = {
+LoginPage.propTypes = {
     isLoggedIn: bool,
     onLogin: func,
     onLogout: func,
 }
 
-function LoginScreen(props) {
+function LoginPage(props) {
 
     return (
         <Login
@@ -20,4 +20,4 @@ function LoginScreen(props) {
     )
 }
 
-export default LoginScreen
+export default LoginPage

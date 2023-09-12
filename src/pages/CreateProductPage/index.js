@@ -4,7 +4,7 @@ import CreateProductForm from '../../components/Shop/CreateProductForm/CreatePro
 export default function CreateProductPage() {
 
     function onCreateProduct(productData) {
-        console.log({productData})
+        console.log({ productData })
         const myHeaders = new Headers()
         myHeaders.append('Authorization', 'Bearer ')
 

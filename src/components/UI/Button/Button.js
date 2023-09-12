@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from './Button.module.css'
-import {bool, func, node, string} from 'prop-types'
+import { bool, func, node, string } from 'prop-types'
 
 Button.propTypes = {
     type: string,
